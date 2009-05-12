@@ -1,0 +1,11 @@
+This library adds some bdd "features" to the fitlibrary DoFixture. Specifically, it will ignore the words "given", "then", "when", and "and" if they are in the first column of a row. Yes, it just adds syntactical sugar, hence the quotes around features above. You will be able to write tests like...
+
+|Your Do Fixture that extends BddDoFixture|
+
+|Given|that I have too much invested in FitNesse to move to Cucumber|
+
+|When|I write acceptance tests|
+
+|Then|ensure|that I can use cool bdd buzzwords|
+
+This was built off of a current version of fitlibrary which means that if you want to use it with older versions it probably won't work since the signature of the interpretRow method in DoTraverseInterpreter has changed recently. Fork and fix as needed.
