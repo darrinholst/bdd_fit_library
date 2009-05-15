@@ -10,4 +10,4 @@ This library adds some bdd "features" to the fitlibrary DoFixture. Specifically,
 
 This was built off of a current version of fitlibrary which means that if you want to use it with older versions it probably won't work since the signature of the interpretRow method in DoTraverseInterpreter has changed recently. Fork and fix as needed.
 
-The the 20081102 version of fitlibrary.jar and the latest version of this jar can be found at http://darrinholst-maven.googlecode.com/svn/repo
+The 20081102 version of fitlibrary.jar and the latest version of this jar can be found at http://darrinholst-maven.googlecode.com/svn/repo
