@@ -1,6 +1,5 @@
 package fitlibrary.traverse.workflow;
 
-import fit.Fixture;
 import fitlibrary.table.Row;
 import fitlibrary.utility.TestResults;
 
@@ -11,8 +10,9 @@ public class BddDoTraverse extends DoTraverse {
 		super(sut);
 	}
 
-	public Object interpretRow(Row row, TestResults testResults, Fixture fixture) {
-		return super.interpretRow(ignoreBddWords(row, testResults), testResults, fixture);
+	@Override
+	public Object interpretRow(Row row, TestResults testResults) {
+		return super.interpretRow(ignoreBddWords(row, testResults), testResults);
 	}
 
 	private Row ignoreBddWords(Row row, TestResults testResults) {
