@@ -3,7 +3,7 @@
     <groupId>org.fitnesse</groupId>
     <artifactId>bdd-fit-library</artifactId>
     <version>1.0.1-SNAPSHOT</version>
-    
+
     <repositories>
         <repository>
             <id>maven2-repository.dev.java.net</id>
@@ -14,8 +14,12 @@
             <id>darrinholst-maven</id>
             <url>http://darrinholst-maven.googlecode.com/svn/repo</url>
         </repository>
+        <repository>
+            <id>don-asf-repository</id>
+            <url>http://people.apache.org/~mrdon/repository/</url>
+        </repository>
     </repositories>
-    
+
     <dependencies>
         <dependency>
             <groupId>org.fitnesse</groupId>
@@ -28,7 +32,7 @@
             <version>20080812</version>
         </dependency>
     </dependencies>
-    
+
     <build>
         <extensions>
             <extension>
@@ -40,6 +44,29 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.scm</groupId>
+                        <artifactId>maven-scm-provider-gitexe</artifactId>
+                        <version>1.1-db-1</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.scm</groupId>
+                        <artifactId>maven-scm-provider-gitexe</artifactId>
+                        <version>1.1-db-1</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.0.2</version>
                 <configuration>
@@ -49,17 +76,17 @@
             </plugin>
         </plugins>
     </build>
-    
+
     <scm>
         <connection>scm:git:git://github.com/darrinholst/bdd_fit_library.git</connection>
         <url>scm:git:git://github.com/mrdon/darrinholst/bdd_fit_library.git</url>
     </scm>
-        
+
     <distributionManagement>
         <repository>
             <uniqueVersion>false</uniqueVersion>
             <id>googlecode</id>
             <url>svn:https://darrinholst-maven.googlecode.com/svn/repo</url>
         </repository>
-    </distributionManagement>    
+    </distributionManagement>
 </project>
